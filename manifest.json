@@ -1,6 +1,6 @@
 {
   "name": "newtab",
-  "version": "0.1",
+  "version": "0.2",
   "description": "open current tab as new window",
   "manifest_version": 3,
   "background": {
