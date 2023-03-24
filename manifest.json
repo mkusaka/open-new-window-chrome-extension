@@ -1,0 +1,23 @@
+{
+  "name": "newtab",
+  "version": "0.1",
+  "description": "open current tab as new window",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "tabs"
+  ],
+  "commands": {
+    "handle_key_event": {
+      "suggested_key": {
+        "windows": "Ctrl+Shift+0",
+        "mac": "Command+Shift+0",
+        "chromeos": "Ctrl+Shift+0",
+        "linux": "Ctrl+Shift+0"
+      },
+      "description": "Handle key event"
+    }
+  }
+}
