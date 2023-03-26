@@ -1,6 +1,6 @@
 {
   "name": "newtab",
-  "version": "0.0.3",
+  "version": "0.4.0",
   "main": "index.js",
   "repository": "https://github.com/mkusaka/open-new-window-chrome-extension.git",
   "author": "mkusaka <hinoshita1992@gmail.com>",
@@ -14,7 +14,7 @@
     "typesync": "^0.10.0"
   },
   "scripts": {
-    "build": "esbuild background.ts --bundle --target=chrome95 --minify --outfile=background.js",
+    "build": "esbuild background.ts --bundle --target=chrome95 --outfile=background.js",
     "watch": "esbuild background.ts --bundle --target=chrome95 --watch --outfile=background.js",
     "package": "rm -f pacakge.zip && yarn build && zip -r package.zip . -x '.git/**' './node_modules/**' 'yarn*' '*.ts' '.idea/**' 'tsconfig.json' 'package.json' '.gitignore'"
   }
