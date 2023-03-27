@@ -1,17 +1,23 @@
 (() => {
   // background.ts
-  chrome.commands.onCommand.addListener(function(command) {
+  chrome.commands.onCommand.addListener(function (command) {
     if (command == "handle_key_event") {
       console.log({ command });
       chrome.tabs.query({ currentWindow: true, active: true }, (tabs) => {
         console.log({ tabs });
         const tab = tabs[0];
-        chrome.windows.create({ tabId: tab.id, incognito: tab.incognito }, async (window) => {
-          await chrome.tabs.move(tabs.map((t) => t.id).filter((id) => !!id), {
-            windowId: window?.id,
-            index: -1
-          });
-        });
+        chrome.windows.create(
+          { tabId: tab.id, incognito: tab.incognito },
+          async (window) => {
+            await chrome.tabs.move(
+              tabs.map((t) => t.id).filter((id) => !!id),
+              {
+                windowId: window?.id,
+                index: -1,
+              }
+            );
+          }
+        );
       });
     }
   });
@@ -28,7 +34,11 @@
         }
       }
       if (missingShortcuts.length > 0) {
-        throw Error(`following keys are cannot be regsitered: ${missingShortcuts.join(", ")}`);
+        throw Error(
+          `following keys are cannot be regsitered: ${missingShortcuts.join(
+            ", "
+          )}`
+        );
       }
     });
   }
