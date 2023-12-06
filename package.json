@@ -10,7 +10,7 @@
     "@types/chrome": "^0.0.225",
     "esbuild": "^0.17.14",
     "prettier": "^2.8.7",
-    "typescript": "^5.0.2",
+    "typescript": "^5.3.3",
     "typesync": "^0.10.0"
   },
   "scripts": {
