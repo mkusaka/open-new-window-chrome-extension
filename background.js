@@ -1,6 +1,7 @@
+"use strict";
 (() => {
   // background.ts
-  chrome.commands.onCommand.addListener(function (command) {
+  chrome.commands.onCommand.addListener(function(command) {
     if (command == "handle_key_event") {
       console.log({ command });
       chrome.tabs.query({ currentWindow: true, active: true }, (tabs) => {
@@ -13,7 +14,7 @@
               tabs.map((t) => t.id).filter((id) => !!id),
               {
                 windowId: window?.id,
-                index: -1,
+                index: -1
               }
             );
           }
